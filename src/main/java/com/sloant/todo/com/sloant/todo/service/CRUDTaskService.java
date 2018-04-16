@@ -12,7 +12,7 @@ public class CRUDTaskService implements TaskService {
 
     @Override
     public void addTask(Task t) {
-        System.out.println("Adding task");
+        System.out.println("Adding task "+t);
     }
 
     @Override
