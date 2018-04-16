@@ -1,6 +1,6 @@
-package com.sloant.todo.server.controllers;
+package com.sloant.todo.controllers;
 
-import com.sloant.todo.com.sloant.todo.service.TaskService;
+import com.sloant.todo.service.TaskService;
 import com.sloant.todo.domain.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

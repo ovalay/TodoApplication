@@ -1,4 +1,4 @@
-package com.sloant.todo.com.sloant.todo.service;
+package com.sloant.todo.service;
 
 import com.sloant.todo.domain.Task;
 import org.springframework.stereotype.Service;
