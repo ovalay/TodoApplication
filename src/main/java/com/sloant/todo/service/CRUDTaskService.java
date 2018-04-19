@@ -1,23 +1,30 @@
 package com.sloant.todo.service;
 
+import com.sloant.todo.dao.TaskRepository;
 import com.sloant.todo.domain.Task;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 @Service
 public class CRUDTaskService implements TaskService {
 
+    @Autowired
+    private TaskRepository repository;
 
     @Override
     public void addTask(Task t) {
-        System.out.println("Adding task "+t);
+        repository.save(t);
     }
 
     @Override
     public Collection<Task> getAllTasks() {
-        System.out.println("getting all tasks");
-        return Arrays.asList(new Task("dummy", "1"), new Task("dummm2", "2"));
+        List<Task> results = new ArrayList<>();
+        repository.findAll().forEach(results::add);
+        return results;
     }
 }
