@@ -23,7 +23,12 @@ public class TaskController {
     }
 
     @RequestMapping("/getAllTasks")
-    public List getAllTasks (){
-        return new ArrayList(taskService.getAllTasks());
+    public List<Task> getAllTasks (){
+        return new ArrayList<>(taskService.getAllTasks());
+    }
+
+    @RequestMapping("/getAllTasksByPriority")
+    public List<Task> getAllTasks (String priority){
+        return new ArrayList<>(taskService.getAllTasksByPriority(priority));
     }
 }

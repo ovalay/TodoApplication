@@ -8,4 +8,6 @@ public interface TaskService {
 
     void addTask(Task t);
     Collection<Task> getAllTasks();
+
+    Collection<Task> getAllTasksByPriority(String priority);
 }
