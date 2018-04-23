@@ -4,6 +4,7 @@ import com.sloant.todo.service.TaskService;
 import com.sloant.todo.domain.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class TaskController {
     TaskService taskService;
 
     @RequestMapping("/addTask")
-    public Task addTask(String name, String priority) {
+    public Task addTask(@RequestParam() String name, @RequestParam() String priority) {
         Task t = new Task(name, priority);
         taskService.addTask(t);
         return t;
@@ -28,7 +29,7 @@ public class TaskController {
     }
 
     @RequestMapping("/getAllTasksByPriority")
-    public List<Task> getAllTasks (String priority){
+    public List<Task> getAllTasks (@RequestParam() String priority){
         return new ArrayList<>(taskService.getAllTasksByPriority(priority));
     }
 }
