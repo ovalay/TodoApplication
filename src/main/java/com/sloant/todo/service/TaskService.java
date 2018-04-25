@@ -6,7 +6,7 @@ import java.util.Collection;
 
 public interface TaskService {
 
-    void addTask(Task t);
+    Task addTask(Task t);
     Collection<Task> getAllTasks();
 
     Collection<Task> getAllTasksByPriority(String priority);

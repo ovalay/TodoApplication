@@ -22,8 +22,8 @@ public class TaskController {
     @RequestMapping("/addTask")
     public Task addTask(@RequestParam() String name, @RequestParam() String priority) {
         Task t = new Task(name, priority);
-        taskService.addTask(t);
-        return t;
+        return taskService.addTask(t);
+
     }
 
     @RequestMapping("/getAllTasks")

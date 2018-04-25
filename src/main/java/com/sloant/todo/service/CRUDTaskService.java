@@ -19,8 +19,8 @@ public class CRUDTaskService implements TaskService {
     }
 
     @Override
-    public void addTask(Task t) {
-        repository.save(t);
+    public Task addTask(Task t) {
+        return repository.save(t);
     }
 
     @Override
