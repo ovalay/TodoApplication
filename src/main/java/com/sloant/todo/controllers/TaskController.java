@@ -13,8 +13,11 @@ import java.util.List;
 @RestController
 public class TaskController {
 
-    @Autowired
     TaskService taskService;
+
+    public TaskController(TaskService taskService) {
+        this.taskService = taskService;
+    }
 
     @RequestMapping("/addTask")
     public Task addTask(@RequestParam() String name, @RequestParam() String priority) {

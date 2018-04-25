@@ -12,8 +12,11 @@ import java.util.List;
 @Service
 public class CRUDTaskService implements TaskService {
 
-    @Autowired
     private TaskRepository repository;
+
+    public CRUDTaskService(TaskRepository repository) {
+        this.repository = repository;
+    }
 
     @Override
     public void addTask(Task t) {
